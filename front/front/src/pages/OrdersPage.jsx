@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 
 function OrdersPage(){
 
@@ -22,11 +23,18 @@ function OrdersPage(){
     },[]);
 
     return(
-        <div></div>
+        <div>
+            {error ? error : orders.map(orden => (
+                <div key={orden.id}>
+                    <p >Id Orden: {orden.id} </p>
+                    <p >Vehiculo: {orden.tipo_ot_id} </p>
+                    <p >Status: {orden.status} </p>
+                </div>
+                
+            )
+            ) }
+        </div>
     )
-
-
-
 
 }
 
