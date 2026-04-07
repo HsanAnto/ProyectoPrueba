@@ -1,4 +1,4 @@
-package com.transer.backend.models;
+package com.transer.backend.models.entities;
 
 import java.time.LocalDateTime;
 
@@ -43,7 +43,7 @@ public class Vehiculo {
     private Integer anio;
 
     @Column
-    private boolean is_active;
+    private Boolean is_active;
 
     @Column
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

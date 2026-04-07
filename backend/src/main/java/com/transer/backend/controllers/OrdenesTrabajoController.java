@@ -3,8 +3,9 @@ package com.transer.backend.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.transer.backend.models.OrdenesTrabajo;
-import com.transer.backend.models.OrdenesTrabajoStatus;
+import com.transer.backend.models.dto.OrdenTrabajoRequest;
+import com.transer.backend.models.entities.OrdenesTrabajo;
+import com.transer.backend.models.enums.OrdenesTrabajoStatus;
 import com.transer.backend.services.OrdenesTrabajoService;
 
 import java.util.List;
@@ -37,8 +38,8 @@ public class OrdenesTrabajoController {
     }
 
     @PostMapping
-    public OrdenesTrabajo postMethodName(@RequestBody OrdenesTrabajo orden) throws BadRequestException {
-        return ordenesTrabajoService.createOrder(orden);
+    public OrdenesTrabajo postMethodName(@RequestBody OrdenTrabajoRequest request) throws BadRequestException {
+        return ordenesTrabajoService.createOrder(request);
     }
 
     @PatchMapping("/{id}/status")

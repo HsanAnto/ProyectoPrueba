@@ -1,12 +1,12 @@
-package com.transer.backend.models;
+package com.transer.backend.models.entities;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,24 +14,34 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tipos_ot")
+@Table(name = "orden_repuestos")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class TiposOt {
+
+public class OrdenesRepuestos {
 
     @Column
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(unique = true)
+    @ManyToOne
     @Nonnull
-    @Enumerated(EnumType.STRING)
-    private TiposOtenum nombre;
+    @JoinColumn(name = "orden_trabajo_id")
+    private OrdenesTrabajo orden_trabajo_id;
 
     @Column
-    private boolean is_active;
+    @Nonnull
+    private String nombre_repuesto;
+
+    @Column
+    @Nonnull
+    private Integer cantidad;
+
+    @Column
+    @Nonnull
+    private Double costo_unitario;
 
 }

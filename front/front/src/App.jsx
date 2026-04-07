@@ -1,11 +1,8 @@
 import './App.css'
-import OrdersPage from './pages/OrdersPage'
+import DashboardPage from './pages/DashboardPage'
 
 function App() {
-
-  return (<div>
-    <OrdersPage/>
-  </div>)
+  return <DashboardPage />
 }
 
 export default App

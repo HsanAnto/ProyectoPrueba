@@ -1,8 +1,9 @@
-package com.transer.backend.models;
+package com.transer.backend.models.entities;
 
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.transer.backend.models.enums.OrdenesTrabajoStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

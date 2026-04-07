@@ -1,4 +1,4 @@
-package com.transer.backend.models;
+package com.transer.backend.models.enums;
 
 public enum TiposOtenum {
     CORRECTIVA,
